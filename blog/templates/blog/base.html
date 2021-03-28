@@ -35,48 +35,56 @@
 				<ul class="navbar-nav mr-auto">
 
 					<li class="nav-item active">
-						<a class="nav-link" href="{% url 'blog-home' %}"> Start </a>
+						<a class="nav-link" href="{% url 'blog-home' %}"> Forum </a>
 					</li>
 
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu" aria-haspopup="true"> Zawody </a>
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu" aria-haspopup="true"> Klasyfikacje </a>
 
 						<div class="dropdown-menu" aria-labelledby="submenu">
 
-							<a class="dropdown-item" href="#"> Terminarz zawodów </a>
-							<a class="dropdown-item" href="#"> Ranking </a>
+							<a class="dropdown-item" href="#"> Klasyfikacje kierowców </a>
+                            <div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#"> Klasyfikacje drużynowe </a>
 
-							<div class="dropdown-divider"></div>
+                        </div>
 
-
-						</div>
 
 					</li>
 
 					<li class="nav-item">
-						<a class="nav-link" href="#"> Historia </a>
+						<a class="nav-link" href="#"> Harmonogram zawodów </a>
 					</li>
 
-					<li class="nav-item">
-						<a class="nav-link" href="#"> Zdjęcia </a>
-					</li>
-
-					<li class="nav-item">
-						<a class="nav-link disabled" href="#"> Wywiady </a>
-					</li>
 
 					<li class="nav-item">
 						<a class="nav-link" href="{% url 'blog-about' %}"> Kontakt </a>
 					</li>
 
-				</ul>
+                </ul>
 
-				<form class="form-inline">
 
-					<input class="form-control mr-1" type="search" placeholder="Wyszukaj" aria-label="Wyszukaj">
-					<button class="btn btn-light" type="submit">Znajdź</button>
 
-				</form>
+
+                    <div class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'blog-about' %}"> Zaloguj się </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'blog-about' %}"> Zarejestruj się </a>
+                        </li>
+
+                    </div>
+
+                </ul>
+
+            </div>
+
+
+
+
 
 			</div>
 
@@ -89,17 +97,16 @@
         <div class="col-md-8">
           {% block content %}{% endblock %}
         </div>
+
+
+
         <div class="col-md-4">
-          <div class="content-section">
-            <h3>Sidebar</h3>
-            <p class='text-muted'>Dodaj tutaj jakas nawigacje strony
-              <ul class="list-group">
-                <li class="list-group-item list-group-item-light">Strona główna</li>
-                <li class="list-group-item list-group-item-light">Wyniki</li>
-                <li class="list-group-item list-group-item-light">Tabele</li>
-                <li class="list-group-item list-group-item-light">Mój profil (?)</li>
-              </ul>
-            </p>
+          <div class="list-group">
+                <a href="{% url 'blog-home' %}" class="list-group-item list-group-item-action list-group-item-light"> Forum </a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-light"> Klasyfikacje zawodników </a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-light"> Klasyfikacje drużyn </a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-light"> Harmonogram zawodów </a>
+                <a href="{% url 'blog-about' %}" class="list-group-item list-group-item-action list-group-item-light"> Kontakt </a>
           </div>
         </div>
       </div>
