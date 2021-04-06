@@ -10,8 +10,6 @@ class UserRegisterForm(UserCreationForm):
     password2 = forms.CharField(widget=forms.PasswordInput(), label='Potwierdź hasło')
 
 
-
-
     class Meta:
         model = User
         fields = ['username',
