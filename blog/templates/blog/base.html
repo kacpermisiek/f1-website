@@ -39,7 +39,7 @@
 					</li>
 
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu" aria-haspopup="true"> Klasyfikacje </a>
+						<a class="nav-link dropdown-toggle active" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu" aria-haspopup="true"> Klasyfikacje </a>
 
 						<div class="dropdown-menu" aria-labelledby="submenu">
 
@@ -52,12 +52,12 @@
 
 					</li>
 
-					<li class="nav-item">
+					<li class="nav-item active">
 						<a class="nav-link" href="#"> Harmonogram zawodów </a>
 					</li>
 
 
-					<li class="nav-item">
+					<li class="nav-item active">
 						<a class="nav-link" href="{% url 'blog-about' %}"> Kontakt </a>
 					</li>
 
@@ -66,16 +66,19 @@
 
 
 
-                    <div class="navbar-nav">
+                    <div class="navbar-nav active">
 
                         {% if user.is_authenticated %}
-                            <a class="nav-link" href="{% url 'logout' %}"> Wyloguj się </a>
+
+                            <a class="nav-link active" href="{% url 'profile' %}"> Mój profil </a>
+
+                            <a class="nav-link active" href="{% url 'logout' %}"> Wyloguj się </a>
 
                         {% else %}
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a class="nav-link" href="{% url 'login' %}"> Zaloguj się </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a class="nav-link" href="{% url 'register' %}"> Zarejestruj się </a>
                         </li>
                         {% endif %}
