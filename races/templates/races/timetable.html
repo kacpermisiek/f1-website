@@ -1,0 +1,9 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+    {% for race in races %}
+        <h1>{{ race.track }}</h1>
+        <p>{{ race.country }}</p>
+        <p>{{ race.date }}</p>
+    {% endfor %}
+{% endblock %}

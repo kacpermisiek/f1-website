@@ -1,6 +1,22 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+
+basic_table = [
+    {
+        'country': 'Bahrajn',
+        'track': 'Sakhir',
+        'date': '21.03.2021r.'
+    },
+
+    {
+        'country': 'Włochy',
+        'track': 'Imola',
+        'date': '21.03.2021r.'
+    },
+]
 
 
 def races(request):
-    return HttpResponse('<h1>Wyniki wyscigow</h1>')
+    context = {
+        'races': basic_table,
+    }
+    return render(request, 'races/timetable.html', context)
