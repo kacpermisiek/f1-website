@@ -2,8 +2,14 @@
 
 {% block content %}
     {% for race in races %}
-        <h1>{{ race.track }}</h1>
-        <p>{{ race.country }}</p>
-        <p>{{ race.date }}</p>
+        <article class="media content-section">
+            <div class="media-body">
+                <div class="article-metadata">
+                <h1>{{ race.track }}</h1>
+                <p>{{ race.country }}</p>
+                <p>{{ race.date }}</p>
+                </div>
+            </div>
+        </article>
     {% endfor %}
 {% endblock %}
