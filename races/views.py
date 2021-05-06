@@ -18,5 +18,7 @@ basic_table = [
 def races(request):
     context = {
         'races': basic_table,
+        'title': 'Wyniki wyścigów',
+
     }
     return render(request, 'races/timetable.html', context)
