@@ -17,7 +17,7 @@ class Race(models.Model):
 
     country = models.CharField(max_length=100)
     track = models.CharField(max_length=100)
-    date = models.DateField
+    date = models.DateField()
 
     def __str__(self):
         return f"{self.track} at {self.country}"
@@ -28,8 +28,13 @@ class DriverPosition(models.Model):
     race = models.ForeignKey(Race, on_delete=models.CASCADE)
     race_points = models.PositiveSmallIntegerField()
 
+    def __str__(self):
+        return f"track: {self.race.track}   driver: {self.driver.surname}  points: {self.race_points}"
+
     class Meta:
         unique_together = [['driver', 'race']]
+
+
 
 
 """

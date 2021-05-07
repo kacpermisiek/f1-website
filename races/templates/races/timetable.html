@@ -1,15 +1,38 @@
 {% extends "blog/base.html" %}
 
 {% block content %}
-    {% for race in races %}
-        <article class="media content-section">
-            <div class="media-body">
-                <div class="article-metadata">
-                <h1>{{ race.track }}</h1>
-                <p>{{ race.country }}</p>
-                <p>{{ race.date }}</p>
-                </div>
-            </div>
-        </article>
+
+    {% for race in races%}
+        <div class="media-body">
+        <h1>{{ race.country }} - {{ race.track }}</h1>
+        <small>{{ race.date }}</small>
+        <table class="table table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Pozycja</th>
+              <th scope="col">Kierowca</th>
+              <th scope="col">Drużyna</th>
+              <th scope="col">Punkty</th>
+            </tr>
+          </thead>
+        <tbody>
+        {% for DP in driverPosition %}
+            {% if DP.race == race %}
+            <tr>
+              <th scope="row">1</th>
+              <td> {{ DP.driver.name }} {{ DP.driver.surname }} </td>
+              <td> {{ DP.driver.team }}</td>
+              <td> {{ DP.race_points }}</td>
+            </tr>
+            {% endif %}
+        {% endfor %}
+        </tbody>
+
+        </table>
+
+        </div>
     {% endfor %}
+
 {% endblock %}
+
+
