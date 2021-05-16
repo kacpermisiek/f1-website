@@ -27,6 +27,7 @@ class DriverPosition(models.Model):
     driver = models.ForeignKey(Driver, on_delete=models.CASCADE)
     race = models.ForeignKey(Race, on_delete=models.CASCADE)
     race_points = models.PositiveSmallIntegerField()
+    position = models.PositiveSmallIntegerField()
 
     def __str__(self):
         return f"track: {self.race.track}   driver: {self.driver.surname}  points: {self.race_points}"
@@ -34,31 +35,3 @@ class DriverPosition(models.Model):
     class Meta:
         unique_together = [['driver', 'race']]
 
-
-
-
-"""
-drivers = (
-    ('HAM', 'Lewis Hamilton'),
-    ('VER', 'Max Verstappen'),
-    ('NOR', 'Lando Norris'),
-    ('', 'Valtteri Bottas'),
-    ('', 'Charles Leclerc'),
-    ('', 'Sergio Perez'),
-    ('', 'Daniel Ricciardo'),
-    ('', 'Carlos Sainz'),
-    ('', 'Esteban Ocon'),
-    ('', '	Pierre Gasly'),
-    ('', 'Lance Stroll'),
-    ('', 'Fernando Alonso'),
-    ('', 'Yuki Tsunoda'),
-    ('', 'Kimi Raikkonen'),
-    ('', 'Antonio Giovinazzi'),
-    ('', 'George Russell'),
-    ('', 'Sebastian Vettel'),
-    ('', 'Mick Schumacher'),
-    ('', 'Nicholas Latifi'),
-    ('', ''),
-    ('', ''),
-    ('', ''),
-"""

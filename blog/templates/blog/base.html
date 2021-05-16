@@ -55,8 +55,6 @@
 					<li class="nav-item active">
 						<a class="nav-link" href="{% url 'races' %}"> Wyniki wyścigów </a>
 					</li>
-
-
 					<li class="nav-item active">
 						<a class="nav-link" href="{% url 'blog-about' %}"> Kontakt </a>
 					</li>
@@ -64,16 +62,11 @@
                 </ul>
 
 
-
-
                     <div class="navbar-nav active">
 
                         {% if user.is_authenticated %}
-
                             <a class="nav-link active" href="{% url 'profile' %}"> Mój profil </a>
-
                             <a class="nav-link active" href="{% url 'logout' %}"> Wyloguj się </a>
-
                         {% else %}
                         <li class="nav-item active">
                             <a class="nav-link" href="{% url 'login' %}"> Zaloguj się </a>
@@ -101,7 +94,7 @@
 
     <main role="main" class="container">
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-9">
             {% if messages %}
                 {% for message in messages %}
                     <div class="alert alert-{{ message.tags }}">
@@ -114,12 +107,12 @@
 
 
 
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="list-group">
                 <a href="{% url 'blog-home' %}" class="list-group-item list-group-item-action list-group-item-light"> Forum </a>
                 <a href="#" class="list-group-item list-group-item-action list-group-item-light"> Klasyfikacje zawodników </a>
                 <a href="#" class="list-group-item list-group-item-action list-group-item-light"> Klasyfikacje drużyn </a>
-                <a href="#" class="list-group-item list-group-item-action list-group-item-light"> Harmonogram zawodów </a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-light"> Wyniki wyścigów </a>
                 <a href="{% url 'blog-about' %}" class="list-group-item list-group-item-action list-group-item-light"> Kontakt </a>
           </div>
         </div>
