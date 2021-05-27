@@ -4,7 +4,7 @@ from .models import Race, Driver, DriverPosition, Team
 
 def races(request):
 
-    races = Race.objects.all().order_by('date')
+    races = Race.objects.all().order_by('-date')
     drivers = Driver.objects.all().order_by('-points')
     driverPosition = DriverPosition.objects.all().order_by('position')
     team = Team.objects.all()
