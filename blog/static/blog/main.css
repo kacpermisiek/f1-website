@@ -102,3 +102,8 @@ a.article-title:hover {
 .f1-logo{
   max-width: 100px;
 }
+
+.timetable {
+  background-color: white;
+  padding: 20px;
+}

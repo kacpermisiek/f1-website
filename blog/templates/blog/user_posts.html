@@ -1,0 +1,41 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+    <h1 class="mb-3">Posty użytkownika {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h1>
+        {% for post in posts %}
+            <article class="media content-section">
+                <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
+                  <div class="media-body">
+                    <div class="article-metadata">
+                      <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
+                      <small class="text-muted">{{ post.date_posted|date:"d.m.Y  h:m" }}</small>
+                    </div>
+                    <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+                    <p class="article-content">{{ post.content }}</p>
+                  </div>
+            </article>
+        {% endfor %}
+        {% if is_paginated %}
+            {% if page_obj.has_previous %}
+                <a class="btn btn-outline-danger mb-4" href="?page=1">Pierwsza</a>
+                <a class="btn btn-outline-danger mb-4" href="?page={{ page_obj.previous_page_number }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+  <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+</svg></a>
+            {% endif %}
+
+            {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                    <a class="btn btn-danger mb-4" href="?page={{ num }}">{{ num }}</a>
+                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                        <a class="btn btn-outline-danger mb-4" href="?page={{ num }}">{{ num }}</a>
+                {% endif %}
+            {% endfor %}
+            {% if page_obj.has_next %}
+                <a class="btn btn-outline-danger mb-4" href="?page={{ page_obj.next_page_number }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+  <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+</svg></a>
+                <a class="btn btn-outline-danger mb-4" href="?page={{ page_obj.paginator.num_pages }}">Ostatnia</a>
+            {% endif %}
+
+        {% endif %}
+{% endblock %}
