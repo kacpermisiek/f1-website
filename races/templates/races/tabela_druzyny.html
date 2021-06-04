@@ -5,19 +5,17 @@
       <thead class="thead-dark">
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Kierowca</th>
           <th scope="col">Zespół</th>
           <th scope="col">Punkty</th>
         </tr>
       </thead>
       <tbody>
 
-        {% for driver in drivers %}
+        {% for team in teams %}
             <tr>
               <th scope="row">{{ forloop.counter }}</th>
-              <td>{{ driver }}</td>
-              <td>{{ driver.team }}</td>
-              <td>{{ driver.points }}</td>
+              <td>{{ team }}</td>
+              <td>{{ team.points }}</td>
             </tr>
         {% endfor %}
 
