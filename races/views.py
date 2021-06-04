@@ -23,6 +23,20 @@ def tabela_kierowcy(request):
     drivers = Driver.objects.all().order_by('-points')
     context = {
         'drivers': drivers,
-        'title': 'Klasyfikacja kierowców'
+        'title': 'Klasyfikacja kierowców',
     }
-    return render(request, 'races/tabela_kierowcy.html')
+    return render(request, 'races/tabela_kierowcy.html', context)
+
+
+def tabela_druzyny(request):
+    drivers = Driver.objects.all().order_by('-points')
+    teams = {}
+    for driver in drivers:
+        teams[driver.team] = teams.get(driver.points, 0) + driver.points
+
+    context = {
+        'title': 'Klasyfikacja druzyn',
+        'teams': teams
+
+    }
+    return render(request, 'races/tabela_druzyny.html', context)
