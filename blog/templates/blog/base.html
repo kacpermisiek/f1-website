@@ -29,7 +29,7 @@
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu" aria-controls="mainmenu" aria-expanded="false" aria-label="Przełącznik nawigacji">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-
+        
 			<div class="collapse navbar-collapse" id="mainmenu">
 
 				<ul class="navbar-nav mr-auto">
@@ -43,9 +43,9 @@
 
 						<div class="dropdown-menu" aria-labelledby="submenu">
 
-							<a class="dropdown-item" href="#"> Klasyfikacje kierowców </a>
+							<a class="dropdown-item" href="{% url 'tabela_kierowcy' %}"> Klasyfikacje kierowców </a>
                             <div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#"> Klasyfikacje drużynowe </a>
+							<a class="dropdown-item" href="{% url 'tabela_druzyny' %}"> Klasyfikacje drużynowe </a>
 
                         </div>
 
@@ -81,13 +81,6 @@
 
                 </ul>
 
-            </div>
-
-
-
-
-
-			</div>
 
 		</nav>
 
@@ -95,7 +88,7 @@
 
     <main role="main" class="container">
       <div class="row">
-        <div class="col-md-9">
+        <div class="col-lg-9">
             {% if messages %}
                 {% for message in messages %}
                     <div class="alert alert-{{ message.tags }}">
@@ -108,12 +101,12 @@
 
 
 
-        <div class="col-md-3">
+        <div class="col-lg-3">
           <div class="list-group">
                 <a href="{% url 'blog-home' %}" class="list-group-item list-group-item-action list-group-item-light"> Forum </a>
-                <a href="#" class="list-group-item list-group-item-action list-group-item-light"> Klasyfikacje zawodników </a>
-                <a href="#" class="list-group-item list-group-item-action list-group-item-light"> Klasyfikacje drużyn </a>
-                <a href="#" class="list-group-item list-group-item-action list-group-item-light"> Wyniki wyścigów </a>
+                <a href="{% url 'tabela_kierowcy' %}" class="list-group-item list-group-item-action list-group-item-light"> Klasyfikacje zawodników </a>
+                <a href="{% url 'tabela_druzyny' %}" class="list-group-item list-group-item-action list-group-item-light"> Klasyfikacje drużyn </a>
+                <a href="{% url 'races' %}" class="list-group-item list-group-item-action list-group-item-light"> Wyniki wyścigów </a>
                 <a href="{% url 'blog-about' %}" class="list-group-item list-group-item-action list-group-item-light"> Kontakt </a>
           </div>
         </div>
