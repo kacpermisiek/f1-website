@@ -19,5 +19,10 @@ def races(request):
     return render(request, 'races/timetable.html', context)
 
 
-def general_drivers(request):
+def tabela_kierowcy(request):
     drivers = Driver.objects.all().order_by('-points')
+    context = {
+        'drivers': drivers,
+        'title': 'Klasyfikacja kierowców'
+    }
+    return render(request, 'races/tabela_kierowcy.html')

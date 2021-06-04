@@ -1,6 +1,6 @@
 body {
   background: #e6e9ed;
-
+  word-break: keep-all;
   font-family: 'Open Sans', sans-serif;
   font-size: 17px;
 }
