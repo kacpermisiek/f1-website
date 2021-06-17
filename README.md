@@ -31,4 +31,4 @@ Przedział czasowy | Taski
 1.03-31.03 | [x] Stworzenie projektu Django, strony admina, bazy danych użytkowników
 1.04-30.04 | [x] Rejestracja, logowanie, wylogowanie; strona profilu użytkownika; zdjęcie użytkownika
 1.05-31.05 | [x] Dodawanie, usuwanie oraz edycja postów; Reset hasła oraz e-maila; Uzupełnienie statystyk zespołów, kierowców oraz wyniki wyścigów
-1.06-15.06 | [ ] Poprawki stylistyczne i backendowe
+1.06-15.06 | [x] Poprawki stylistyczne i backendowe
