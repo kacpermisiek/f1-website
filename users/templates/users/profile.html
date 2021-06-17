@@ -16,9 +16,15 @@
                 {{ u_form|crispy }}
                 {{ p_form|crispy }}
             </fieldset>
+
+            <a class="btn btn-outline-info mb-4" href="{% url "password_reset" %}">Zmień hasło</a>
+
+
             <div class="form-group">
                 <button class="btn btn-outline-info" type="submit"> Zatwierdź </button>
             </div>
         </form>
+
+
     </div>
 {% endblock content %}
